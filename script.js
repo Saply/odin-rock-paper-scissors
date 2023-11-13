@@ -40,7 +40,7 @@ function game() {
 
     for(let i = 0; i < 5; i++) {
         let computerChoice = getComputerChoice();
-        let playerChoice = validatePlayerInput();
+        // let playerChoice = validatePlayerInput();
         let result = playRound(playerChoice, computerChoice);
         console.log(`Player picks ${playerChoice}, Computer picks ${computerChoice}`);
 
