@@ -55,6 +55,7 @@ function addTableColumn(winner, playerSelection, computerSelection) {
     let computerMove = textToEmoji(computerSelection);
 
     const table = document.querySelector(".results-table");
+
     const tr = document.createElement("tr");
     const tdPlayer = document.createElement("td");
     tdPlayer.appendChild(document.createTextNode(playerMove));
@@ -63,7 +64,27 @@ function addTableColumn(winner, playerSelection, computerSelection) {
     tdComputer.appendChild(document.createTextNode(computerMove));
 
     const tdWinner = document.createElement("td");
-    tdWinner.appendChild(document.createTextNode(`${winner} wins!`))
+    if (winner == "player") {
+        tdPlayer.style.backgroundColor = "rgb(38, 158, 52)";
+        tdComputer.style.backgroundColor = "rgb(38, 158, 52)";
+        tdWinner.style.backgroundColor = "rgb(38, 158, 52)";
+        tdWinner.appendChild(document.createTextNode(`Player wins!`))
+    }
+
+    else if (winner == "computer") {
+        tdPlayer.style.backgroundColor = "rgb(148, 49, 49)";
+        tdComputer.style.backgroundColor = "rgb(148, 49, 49)";
+        tdWinner.style.backgroundColor = "rgb(148, 49, 49)";
+        tdWinner.appendChild(document.createTextNode(`Computer wins!`))
+    }
+
+    else {
+        tdPlayer.style.backgroundColor = "rgb(185, 154, 154)";
+        tdComputer.style.backgroundColor = "rgb(185, 154, 154)";
+        tdWinner.style.backgroundColor = "rgb(185, 154, 154)";
+        tdWinner.appendChild(document.createTextNode(`It's a tie!`));
+    }
+        
 
     tr.appendChild(tdPlayer);
     tr.appendChild(tdComputer);
@@ -80,8 +101,7 @@ function resetGame() {
 function playMove(playerSelection) {
     let computerSelection = getComputerChoice();
     let result = playRound(playerSelection, computerSelection);
-    if (result != "tie")
-        addTableColumn(result, playerSelection, computerSelection);    
+    addTableColumn(result, playerSelection, computerSelection);    
 
     // disable each button
     if (playerWins == 5 || computerWins == 5) {
@@ -111,3 +131,6 @@ const playOrRestart = document.querySelector(".restart")
 playOrRestart.addEventListener("click", () => {
     window.location.reload();
 })
+
+const test = document.querySelector(".results-container p")
+test.textContent = ""
