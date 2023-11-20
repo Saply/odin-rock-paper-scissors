@@ -16,12 +16,17 @@ img {
 /* the rest */
 .header-intro {
     background-color: #264653;
+    color: white;
 }
 
-.header-intro p {
+
+.header-intro p, .header-intro h1 {
     display: flex;
-    justify-content: center;
-    
+    justify-content: center;   
+}
+
+.header-intro h2 {
+    margin-left: 5px;
 }
 
 /* options */
@@ -43,13 +48,14 @@ img {
     margin: 5%;
     height: 100%;
     width: 100%;
+    background-color: #19381F;
+    border-radius: 10px;
 }
 
 
 .options button:hover {
-    transition: 0.5s ease-in;
-    background-color: rgb(148, 49, 49);
-    border-color: red;
+    transition: 0.2s ease-in;
+    background-color: rgb(32, 145, 60);
 }
 
 
@@ -58,15 +64,19 @@ img {
     height: 50px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .restart button {
     height: 75%;
     width: 75%;
+    border-radius: 50px;
+    background-color: #1a91c4;
 }
 
 .restart button:hover {
-    background-color: #19381F;
+    transition: 0.2s ease-in;
+    background-color: #207397;
 }
 
 .results-container {
@@ -84,8 +94,7 @@ img {
 
 .wins {
     display: flex;
-    justify-content: space-around;
-    
+    justify-content: space-around;    
 }
 
 .player-wins, .computer-wins {
