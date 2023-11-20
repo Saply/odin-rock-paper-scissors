@@ -35,26 +35,34 @@ function addTableColumn(winner, playerSelection, computerSelection) {
     let textToEmoji = (selection) => {
         switch(selection) {
             case "rock":
-                return "🪨";
+                return "emoji/rock.svg";
             case "paper":
-                return "📄";
+                return "emoji/paper.svg";
             case "scissors":
-                return "✂️";
+                return "emoji/scissors.svg";
         }
     }
     let playerMove = textToEmoji(playerSelection);
     let computerMove = textToEmoji(computerSelection);
 
+    const emojiImagePlayer = document.createElement("img");
+    const emojiImageComputer = document.createElement("img");
     const table = document.querySelector(".results-table");
 
     const tr = document.createElement("tr");
+
     const tdPlayer = document.createElement("td");
-    tdPlayer.appendChild(document.createTextNode(playerMove));
+    emojiImagePlayer.src = playerMove;
+    emojiImagePlayer.style.maxWidth = "25px"
+    tdPlayer.appendChild(emojiImagePlayer);
 
     const tdComputer = document.createElement("td");
-    tdComputer.appendChild(document.createTextNode(computerMove));
+    emojiImageComputer.src = computerMove;
+    emojiImageComputer.style.maxWidth = "25px"
+    tdComputer.appendChild(emojiImageComputer);
 
     const tdWinner = document.createElement("td");
+    
     if (winner == "player") {
         tdPlayer.style.backgroundColor = "rgb(38, 158, 52)";
         tdComputer.style.backgroundColor = "rgb(38, 158, 52)";
