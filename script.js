@@ -20,23 +20,14 @@ function playRound(playerSelection, computerSelection) {
         playerSelection == "scissors" && computerSelection == "paper" 
     ) {
         playerWins++;
+        playerWinsDisplay.textContent = playerWins;
         return "player";
     }
 
     else {
         computerWins++;
+        computerWinsDisplay.textContent = computerWins;
         return "computer";
-    }
-}
-
-function a(selection) {
-    switch(selection) {
-        case "rock":
-            return "🪨";
-        case "paper":
-            return "📄";
-        case "scissors":
-            return "✂️";
     }
 }
 
@@ -108,6 +99,9 @@ function playMove(playerSelection) {
         rockButton.disabled = true;
         paperButton.disabled = true;
         scissorsButton.disabled = true;
+
+        if (playerWins > computerWins) whoWins.textContent = "Player wins!";
+        else whoWins.textContent = "Computer wins!";
         
     }
 }
@@ -132,5 +126,7 @@ playOrRestart.addEventListener("click", () => {
     window.location.reload();
 })
 
-const test = document.querySelector(".results-container p")
-test.textContent = ""
+const playerWinsDisplay = document.querySelector(".player-wins p");
+const computerWinsDisplay = document.querySelector(".computer-wins p");
+const whoWins = document.querySelector(".results-container h2");
+

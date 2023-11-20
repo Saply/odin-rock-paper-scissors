@@ -21,9 +21,7 @@ body {
 
 /* options */
 .game-container {
-    background-color: #70A9A1;
-    margin: 0px;
-    padding: 0px;
+    background-color: #264653;
 }
 
 .options {
@@ -32,15 +30,18 @@ body {
     height: 50px;
     align-items: center;
     justify-content: center;
-
+    margin: 2% 10% 2% 10%;  
 }
 
 .options button {
-    flex: 1;
-    margin: 20px;
+    flex: 1 1 0px;
+    margin: 5%;
     height: 100%;
     width: 100%;
+
+    
 }
+
 
 .options button:hover {
     transition: 0.5s ease-in;
@@ -64,18 +65,35 @@ body {
     background-color: #70A9A1;
 }
 
+.results-container h2 {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.wins {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.player-wins, .computer-wins {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+} 
+
 /* for table results */
+
 .results-table table {  
     table-layout: fixed;
-    border-collapse: separate; 
-    margin: 5%;
+    border-collapse: separate;
 }  
       
 .results-table th, .results-table td {  
     border: 1px solid #ddd;  
     width: 30%;
     padding: 8px;  
-    text-align: left; 
+    text-align: center; 
     word-wrap: break-word;
 }  
       
@@ -101,15 +119,4 @@ body {
 
 .footer-container h3 {
     margin: 0px;
-}
-
-/* mobile only */
-@media (max-width: 320px) {
-    .options {
-        display: flex;
-        flex-direction: column;
-        height: 50px;
-        align-items: center;
-        margin: 10px;
-    }
 }
